@@ -1,0 +1,86 @@
+[
+  {
+    "file": "py-data-full.json",
+    "env": "py-data",
+    "task": "big-orders",
+    "strategy": "full",
+    "answered_ms": 21253.918
+  },
+  {
+    "file": "py-data-lazy.json",
+    "env": "py-data",
+    "task": "big-orders",
+    "strategy": "lazy",
+    "answered_ms": 27577.665
+  },
+  {
+    "file": "py-data-hydrate.json",
+    "env": "py-data",
+    "task": "big-orders",
+    "strategy": "hydrate",
+    "answered_ms": 18896.371
+  },
+  {
+    "file": "py-data-thaw.json",
+    "env": "py-data",
+    "task": "big-orders",
+    "strategy": "thaw",
+    "answered_ms": 17646.556
+  },
+  {
+    "file": "repo-full.json",
+    "env": "repo",
+    "task": "import-models",
+    "strategy": "full",
+    "answered_ms": 18922.512
+  },
+  {
+    "file": "repo-lazy.json",
+    "env": "repo",
+    "task": "import-models",
+    "strategy": "lazy",
+    "answered_ms": 25029.292
+  },
+  {
+    "file": "repo-hydrate.json",
+    "env": "repo",
+    "task": "import-models",
+    "strategy": "hydrate",
+    "answered_ms": 16778.6
+  },
+  {
+    "file": "repo-thaw.json",
+    "env": "repo",
+    "task": "import-models",
+    "strategy": "thaw",
+    "answered_ms": 16473.022
+  },
+  {
+    "file": "node-ts-full.json",
+    "env": "node-ts",
+    "task": "diagnostics",
+    "strategy": "full",
+    "answered_ms": 14799.787
+  },
+  {
+    "file": "node-ts-lazy.json",
+    "env": "node-ts",
+    "task": "diagnostics",
+    "strategy": "lazy",
+    "answered_ms": 16223.247
+  },
+  {
+    "file": "node-ts-hydrate.json",
+    "env": "node-ts",
+    "task": "diagnostics",
+    "strategy": "hydrate",
+    "answered_ms": 10968.122
+  },
+  {
+    "file": "node-ts-thaw.json",
+    "env": "node-ts",
+    "task": "diagnostics",
+    "strategy": "thaw",
+    "answered_ms": 10753.456
+  }
+]
