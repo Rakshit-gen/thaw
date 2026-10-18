@@ -1,0 +1,173 @@
+@import "tailwindcss";
+
+/*
+ * Two surfaces. Paper is for reading: warm off-white and ink, hairline
+ * rules, nothing floating. The instrument is for watching a restore: a warm
+ * near-black panel with flat 4px corners, the way a bench meter looks.
+ *
+ * The block colours are the one place colour means something, and they
+ * mean the same thing everywhere: frost is a block nobody has fetched,
+ * amber has arrived and is waiting to be used, sage was used without
+ * waiting, rust made the guest wait. Zero blocks are empty paper.
+ */
+:root {
+  --paper: #f2ede3;
+  --paper-deep: #e8e0d0;
+  --rule: #d6ccb8;
+  --ink: #17202b;
+  --ink-soft: #4a5260;
+  --ink-faint: #7d828b;
+
+  --night: #131211;
+  --night-2: #1b1a18;
+  --night-3: #24221f;
+  --night-rule: #2f2c28;
+  --night-ink: #e6e0d3;
+  --night-dim: #8f897d;
+
+  --frost: #c7d6dc;
+  --frost-night: #2b3539;
+  --amber: #d79a3e;
+  --sage: #6f9a72;
+  --rust: #c4512c;
+
+  --radius: 4px;
+}
+
+@theme inline {
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-rule: var(--rule);
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-ink-faint: var(--ink-faint);
+  --color-night: var(--night);
+  --color-night-2: var(--night-2);
+  --color-night-3: var(--night-3);
+  --color-night-rule: var(--night-rule);
+  --color-night-ink: var(--night-ink);
+  --color-night-dim: var(--night-dim);
+  --color-frost: var(--frost);
+  --color-frost-night: var(--frost-night);
+  --color-amber: var(--amber);
+  --color-sage: var(--sage);
+  --color-rust: var(--rust);
+  --font-sans: var(--font-sans);
+  --font-mono: var(--font-mono);
+  --radius-panel: var(--radius);
+}
+
+body {
+  background: var(--paper);
+  color: var(--ink);
+  font-family: var(--font-sans), ui-sans-serif, system-ui, sans-serif;
+  font-feature-settings: "ss01" 1;
+}
+
+::selection {
+  background: var(--amber);
+  color: var(--night);
+}
+
+:where(a, button, select, input, summary, [role="tab"]):focus-visible {
+  outline: 2px solid var(--rust);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+.mono {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+.instrument {
+  background: var(--night);
+  color: var(--night-ink);
+  border: 1px solid var(--night-rule);
+  border-radius: var(--radius);
+}
+
+/* Zero blocks in legends and tables. */
+.hatch {
+  background-image: repeating-linear-gradient(135deg, var(--ink-faint) 0 1px, transparent 1px 5px);
+}
+
+/* Prose on the docs page. */
+.prose-thaw h2 {
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;
+  margin-top: 3.5rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid var(--rule);
+}
+.prose-thaw h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  margin-top: 2rem;
+}
+.prose-thaw p,
+.prose-thaw li {
+  color: var(--ink-soft);
+  line-height: 1.7;
+  max-width: 68ch;
+}
+.prose-thaw p {
+  margin-top: 0.9rem;
+}
+.prose-thaw ul {
+  margin-top: 0.9rem;
+  padding-left: 1.2rem;
+  list-style: disc;
+}
+.prose-thaw ol {
+  margin-top: 0.9rem;
+  padding-left: 1.2rem;
+  list-style: decimal;
+}
+.prose-thaw code {
+  font-family: var(--font-mono), ui-monospace, monospace;
+  font-size: 0.86em;
+  background: var(--paper-deep);
+  padding: 0.1em 0.35em;
+  border-radius: 2px;
+  color: var(--ink);
+}
+.prose-thaw pre {
+  margin-top: 1rem;
+  background: var(--night);
+  color: var(--night-ink);
+  padding: 1rem 1.1rem;
+  border-radius: var(--radius);
+  overflow-x: auto;
+  font-size: 0.84rem;
+  line-height: 1.6;
+}
+.prose-thaw pre code {
+  background: none;
+  padding: 0;
+  color: inherit;
+}
+.prose-thaw a {
+  color: var(--ink);
+  text-decoration: underline;
+  text-decoration-color: var(--rust);
+  text-underline-offset: 3px;
+}
+.prose-thaw table {
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+.prose-thaw th {
+  text-align: left;
+  font-weight: 500;
+  color: var(--ink-faint);
+  padding: 0.4rem 1.5rem 0.4rem 0;
+  border-bottom: 1px solid var(--ink);
+}
+.prose-thaw td {
+  padding: 0.45rem 1.5rem 0.45rem 0;
+  border-bottom: 1px solid var(--rule);
+  color: var(--ink-soft);
+  vertical-align: top;
+}
